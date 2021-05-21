@@ -33,6 +33,7 @@ Structures:
                 |-----2008__000215.png
                 |-----2008__000217.png
 
+
 The person_train.txt and person_trainval.txt contains the filename of the specific images.
 For example, for image with name "2008__00213", without the file extension, points to the 
     
