@@ -11,27 +11,27 @@ Structures:
 	VidConData
 		|	
 		|----Main:
-		|		|	
-		|		|------person_train.txt
-		|		|------person_trainval.txt
+		|	|	
+		|	|------person_train.txt
+		|	|------person_trainval.txt
 		|
 		|----Annotations:
-		|		|
-		|		|-----2008__000213.xml
-		|		|-----2008__000215.xml
-		|		|-----2008__000217.xml
+		|	|
+		|	|-----2008__000213.xml
+		|	|-----2008__000215.xml
+		|	|-----2008__000217.xml
 		|
 		|----ImageSet:
-		|		|
-		|		|-----2008__000213.jpg
-		|		|-----2008__000215.jpg
-		|		|-----2008__000217.jpg
+		|	|
+		|	|-----2008__000213.jpg
+		|	|-----2008__000215.jpg
+		|	|-----2008__000217.jpg
 		|
 		|----Segmented:
-				|
-				|-----2008__000213.png
-				|-----2008__000215.png
-				|-----2008__000217.png
+                |
+                |-----2008__000213.png
+                |-----2008__000215.png
+                |-----2008__000217.png
 
 The person_train.txt and person_trainval.txt contains the filename of the specific images.
 For example, for image with name "2008__00213", without the file extension, points to the 
