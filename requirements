@@ -1,0 +1,19 @@
+
+1. Configure the python interpreter using "conda", with python version 3.6
+
+2. Install the following packages under this url: https://pytorch.org/get-started/locally/
+
+    "conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch"
+
+    Ignore the cudatoolkit for now, if the device does not have a cuda GPU, use this instead:
+    "conda install pytorch torchvision torchaudio cpuonly -c pytorch"
+
+3. The resulting environment should have at least the following package with versions attached
+Versions:
+
+pytorch-1.7.1
+torchvision-0.8.2-py36_cu102
+
+
+4 Optional:
+pip install opencv-python
