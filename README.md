@@ -11,27 +11,22 @@ Structures:
 	VidConData
 		|	
 		|----Main:
-		|	|	
-		|	|------person_train.txt
-		|	|------person_trainval.txt
+		|		|	
+		|		|------rain.txt
+		|		|------trainval.txt
+		|       |------val.txt
 		|
-		|----Annotations:
-		|	|
-		|	|-----2008__000213.xml
-		|	|-----2008__000215.xml
-		|	|-----2008__000217.xml
+		|----images:
+		|		|
+		|		|-----2008__000213.jpg
+		|		|-----2008__000215.jpg
+		|		|-----2008__000217.jpg
 		|
-		|----ImageSet:
-		|	|
-		|	|-----2008__000213.jpg
-		|	|-----2008__000215.jpg
-		|	|-----2008__000217.jpg
-		|
-		|----Segmented:
-                |
-                |-----2008__000213.png
-                |-----2008__000215.png
-                |-----2008__000217.png
+		|----masks:
+				|
+				|-----2008__000213.png
+				|-----2008__000215.png
+				|-----2008__000217.png
 
 
 The person_train.txt and person_trainval.txt contains the filename of the specific images.

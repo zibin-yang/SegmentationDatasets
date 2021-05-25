@@ -1,36 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b32e9f86-04c7-46b2-8301-7c53a24a905b" name="Default Changelist" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VidConData/images/2008_000213.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VidConData/images/2008_000215.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VidConData/images/2008_000217.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VidConData/masks/2008_000213.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VidConData/masks/2008_000215.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VidConData/masks/2008_000217.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VidConData/segmentation/train.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VidConData/segmentation/trainval.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datasets/ConferenceVideoSeg/code/conference_video_seg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datasets/ConferenceVideoSeg/code/reconstruct.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SegmentationDatasets.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SegmentationDatasets.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectStructure.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectStructure.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VidConData/Annotations/2008_000213.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VidConData/Annotations/2008_000215.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VidConData/Annotations/2008_000217.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VidConData/ImageSet/2008_000213.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VidConData/ImageSet/2008_000215.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VidConData/ImageSet/2008_000217.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VidConData/Main/person_train.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VidConData/Main/person_trainval.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VidConData/Segmented/2008_000213.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VidConData/Segmented/2008_000215.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VidConData/Segmented/2008_000217.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements" beforeDir="false" afterPath="$PROJECT_DIR$/requirements" afterDir="false" />
+    <list default="true" id="b32e9f86-04c7-46b2-8301-7c53a24a905b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +18,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -136,7 +109,7 @@
       <workItem from="1621629972463" duration="28000" />
       <workItem from="1621630021266" duration="3155000" />
       <workItem from="1621900594330" duration="7219000" />
-      <workItem from="1621974631554" duration="5225000" />
+      <workItem from="1621974631554" duration="5476000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1621630671769</created>
@@ -166,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621635621433</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="reconstruct VideoConference Dataset to prepare for training/testing">
+      <created>1621980038200</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1621980038200</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,10 +166,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="reconstruct VideoConference Dataset to prepare for training/testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="reconstruct VideoConference Dataset to prepare for training/testing" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SegmentationDatasets$conference_video_seg.coverage" NAME="conference_video_seg Coverage Results" MODIFIED="1621902925996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ConferenceVideoSeg/code" />
-    <SUITE FILE_PATH="coverage/SegmentationDatasets$reconstruct.coverage" NAME="reconstruct Coverage Results" MODIFIED="1621979840639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/datasets/ConferenceVideoSeg/code" />
+    <SUITE FILE_PATH="coverage/SegmentationDatasets$reconstruct.coverage" NAME="reconstruct Coverage Results" MODIFIED="1621979858366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/datasets/ConferenceVideoSeg/code" />
   </component>
 </project>
