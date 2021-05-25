@@ -5,22 +5,17 @@ Structures:
 		|	
 		|----Main:
 		|		|	
-		|		|------person_train.txt
-		|		|------person_trainval.txt
+		|		|------rain.txt
+		|		|------trainval.txt
+		|       |------val.txt
 		|
-		|----Annotations:
-		|		|
-		|		|-----2008__000213.xml
-		|		|-----2008__000215.xml
-		|		|-----2008__000217.xml
-		|
-		|----ImageSet:
+		|----images:
 		|		|
 		|		|-----2008__000213.jpg
 		|		|-----2008__000215.jpg
 		|		|-----2008__000217.jpg
 		|
-		|----Segmented:
+		|----masks:
 				|
 				|-----2008__000213.png
 				|-----2008__000215.png
