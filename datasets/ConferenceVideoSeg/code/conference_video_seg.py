@@ -35,8 +35,8 @@ class ConfereceVideoSeg(data.Dataset):
         #
         with open(_list_file, 'r') as lines:
             for line in lines:
-                _image = self.root + "/images/" + line.strip('\n') + ".jpg"
-                _mask = self.root + "/masks/" + line.strip('\n') + "png"
+                _image = self.root + "/images/" + 'original' + line.strip('\n') + ".jpg"
+                _mask = self.root + "/masks/" + 'gt' + line.strip('\n') + ".jpg"
                 #
                 assert os.path.isfile(_image)
                 assert os.path.isfile(_mask)

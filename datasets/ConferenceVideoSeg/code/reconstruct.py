@@ -2,8 +2,81 @@
 
 import os
 import shutil
+from PIL import Image
+import numpy as np
 
 from pathlib import Path
+
+def create_mask_img_to_target(imgFile, targetFile):
+
+    assert os.path.isfile(imgFile)
+    if os.path.exists(targetFile):
+        print("{} already exists, skip".format(targetFile))
+        return
+    #
+    originMask = Image.open(imgFile).convert('L')
+    maskNp = np.array(originMask)
+
+    h, w = maskNp.shape
+    for y in range(h):
+        for x in range(w):
+            val = maskNp[y][x]
+            if val > 100:
+                val = 1
+            else:
+                val = 0
+            maskNp[y][x] = val
+
+    maskFile = Image.fromarray(maskNp)
+    maskFile.save(targetFile)
+
+
+def convert_mask_to_target(imgDir, targetDir, listDir, listName):
+    print("Convert masks from {} to {}, referencing list {}".format(imgDir, targetDir, listName))
+    #
+    assert os.path.isdir(imgDir)
+    assert os.path.isdir(targetDir)
+    assert os.path.isdir(listDir)
+    imgListfile = os.path.join(listDir, listName)
+    #
+    imgType = targetDir.find('mask')
+    if imgType != -1:
+        prefix = 'gt'
+    else:# images
+        print("error: expecting only mask directory, got{}\n".format(targetDir))
+        #prefix = 'original'
+        return
+    counter = 0
+    dupList = []
+    nameList = []
+    with open(imgListfile, 'r') as lines:
+        for line in lines:
+            imgName = prefix + line.strip('\n') + '.jpg'
+            targetName = prefix + line.strip('\n') + '.png'
+            nameList.append((imgName, targetName))
+    listLen = len(nameList)
+
+
+    for i in range(listLen):
+        imgName, targetName = nameList[i]
+        # find the original image file
+        imgFile = os.path.join(imgDir, imgName)
+        assert os.path.isfile(imgFile)
+
+        # check if target image already in target dir
+        # skip if already exists
+        targetFile = os.path.join(targetDir, targetName)
+        if os.path.exists(targetFile):
+            dupList.append(targetFile)
+            continue
+        create_mask_img_to_target(imgFile, targetFile)
+
+        if i % (listLen/10) == 0:
+            print("{}% finished".format((i/listLen) * 100))
+
+    print("{} images read from {} and created at {}, skipped {}(image already exisits)".format(counter, imgDir, targetDir, len(dupList)))
+    return counter
+
 
 def load_file_list(fileDir, listDir, listName):
 
@@ -86,7 +159,7 @@ def copy_img_to_target(imgDir, targetDir, listDir, listName):
             shutil.copy(imgFile, targetDir)
             counter += 1
 
-    print("{} images copied from {} to {}, skipped {}(image already exisits)".format(counter, imgDir, targetDir, len(dupList)))
+    print("{} images copied from {} to {}, skipped {}(image already exists)".format(counter, imgDir, targetDir, len(dupList)))
     return counter
 
 
@@ -124,10 +197,10 @@ def main():
 
     # testing
     copy_img_to_target(origin_test_img_dir, target_images_dir, target_segmentation_dir, 'test.txt')
-    copy_img_to_target(origin_test_mask_dir, target_masks_dir, target_segmentation_dir, 'test.txt')
+    convert_mask_to_target(origin_test_mask_dir, target_masks_dir, target_segmentation_dir, 'test.txt')
     # training
     copy_img_to_target(origin_train_img_dir, target_images_dir, target_segmentation_dir, 'train.txt')
-    copy_img_to_target(origin_train_mask_dir, target_masks_dir, target_segmentation_dir, 'train.txt')
+    convert_mask_to_target(origin_train_mask_dir, target_masks_dir, target_segmentation_dir, 'train.txt')
 
 if __name__ == "__main__":
     main()
