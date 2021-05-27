@@ -5,6 +5,26 @@ import shutil
 from PIL import Image
 import numpy as np
 
+def normalize_mask(imgFile):
+
+    assert os.path.isfile(imgFile)
+    originMask = Image.open(imgFile).convert('L')
+    maskNp = np.array(originMask)
+
+    h, w = maskNp.shape
+    for y in range(h):
+        for x in range(w):
+            val = maskNp[y][x]
+            if val > 100:
+                val = 1
+            else:
+                val = 0
+            maskNp[y][x] = val
+
+    maskFile = Image.fromarray(maskNp)
+    maskFile.save(imgFile)
+    #maskFile.save()
+
 # return a list of file
 def load_file_to_list(fileDir, listDir, listName) -> [] :
     assert os.path.isdir(fileDir)
@@ -85,6 +105,7 @@ def copy_helper_(imgDir, targetImgDir, targetMaskDir, imgList):
             if not os.path.isfile(maskFile):
                 print("Error [{}] {} is not a valid image file.".format(imgCounter_, maskFile))
             else:
+                normalize_mask(maskFile)
                 shutil.copy(maskFile, targetMaskDir)
                 maskCounter_ += 1
 

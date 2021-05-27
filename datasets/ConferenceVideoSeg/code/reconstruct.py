@@ -7,7 +7,7 @@ import numpy as np
 
 from pathlib import Path
 
-def create_mask_img_to_target(imgFile, targetFile):
+def normalize_mask_jpg_to_png(imgFile, targetFile):
 
     assert os.path.isfile(imgFile)
     if os.path.exists(targetFile):
@@ -69,7 +69,7 @@ def convert_mask_to_target(imgDir, targetDir, listDir, listName):
         if os.path.exists(targetFile):
             dupList.append(targetFile)
             continue
-        create_mask_img_to_target(imgFile, targetFile)
+        normalize_mask_jpg_to_png(imgFile, targetFile)
 
         if i % (listLen/10) == 0:
             print("{}% finished".format((i/listLen) * 100))
