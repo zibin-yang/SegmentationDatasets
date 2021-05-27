@@ -21,7 +21,7 @@ class ClassinSeg(data.Dataset):
         if self.train:
             _list_file = os.path.join(_list_dir, 'train.txt')
         else:
-            _list_file = os.path.join(_list_dir, 'val.txt')
+            _list_file = os.path.join(_list_dir, 'test.txt')
 
         self.images = []
         self.masks = []
@@ -35,7 +35,7 @@ class ClassinSeg(data.Dataset):
         with open(_list_file, 'r') as lines:
             for line in lines:
                 _image = self.root + "/images/" + line.strip('\n') + ".jpg"
-                _mask = self.root + "/masks/" + lines.strip('\n') + ".png"
+                _mask = self.root + "/masks/" + line.strip('\n') + ".png"
                 #
                 assert os.path.isfile(_image)
                 assert os.path.isfile(_mask)
@@ -56,7 +56,7 @@ class ClassinSeg(data.Dataset):
         #
         if self.train:
             return _img, _target
-        else:# val
+        else:# test
             _img_origin, _ = self._transform(_img_origin)
             return _img, _target, _img_origin, self.images[index].strip(self.root + "/images/")
 
@@ -74,7 +74,7 @@ class ClassinSeg(data.Dataset):
         # concat
         image = ToTensor()(image)
         # normalize
-        image.self.normalize(image)
+        image = self.normalize(image)
         #
         if label is not None:
             label = torch.LongTensor(np.array(label))
