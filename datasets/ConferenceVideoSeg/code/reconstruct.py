@@ -95,8 +95,8 @@ def load_file_list(fileDir, listDir, listName):
     counter = 0
     #nameList = []
     idList = []
-    #
-    filenameList = os.listdir(fileDir)
+    # listdir does not sort according to filenames
+    filenameList = sorted(os.listdir(fileDir))
     #
     idStart = filenameList[0].find('gt')
     if idStart == 0: # gt3_1.jpg
@@ -165,13 +165,15 @@ def copy_img_to_target(imgDir, targetDir, listDir, listName):
 
 def main():
     dataset_name = 'ConferenceVideoSeg'
-    root = '../../' + dataset_name + '/'
+    #root = '../../' + dataset_name + '/'
+    root = '../../' + dataset_name
     print(root)
 
     # Load original dataset directories
     origin_dataset_dir = os.path.join(root, 'data/ConferenceVideoSegmentationDataset')
     print(origin_dataset_dir)
 
+    return
     origin_train_img_dir = os.path.join(origin_dataset_dir, 'original_training')
     origin_test_img_dir = os.path.join(origin_dataset_dir, 'original_testing')
     origin_train_mask_dir = os.path.join(origin_dataset_dir, 'ground_truth_training')
